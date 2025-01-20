@@ -36,5 +36,23 @@ public class Tienda {
 	public void setProductos(List<Producto> productos) {
 		this.productos = productos;
 	}
-	
+	public void reponerProductos(int cantidad) {
+    Random random = new Random();
+    for (int i = 0; i < cantidad; i++) {
+        String nombreProducto = "Producto" + (productos.size() + 1);
+        double precio = 10 + (90 * random.nextDouble());
+        productos.add(new Producto(nombreProducto, Math.round(precio * 100.0) / 100.0));
+    }
+}
+
+public Producto venderProducto() {
+    if (!productos.isEmpty()) {
+        Producto vendido = productos.remove(0);
+        if (productos.size() < 5) {
+            reponerProductos(5);
+        }
+        return vendido;
+    }
+    return null;
+}
 }
