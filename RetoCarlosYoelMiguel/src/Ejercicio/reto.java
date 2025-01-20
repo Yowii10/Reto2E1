@@ -1,15 +1,27 @@
 package Ejercicio;
 
-import java.util.Scanner;
-
+import java.util.*;
+import java.io.*;
+import Clases.*;
 import Util.Funciones;
 
 public class reto {
 
 	public static void main(String[] args) {
-		
 		Scanner sc = new Scanner(System.in);
 		int numero = 0;
+		List<Empleado> empleados = new ArrayList();
+		List<Tienda> tiendas = new ArrayList();
+		List<Cliente> clientes = new ArrayList();
+		for (int i = 0; i < 20; i++) {
+			empleados.add(Funciones.generarEmpleado());
+		}
+		
+		for (int i = 0; i < 5; i++) {
+			tiendas.add(Funciones.generarTienda());
+			
+		}
+		clientes.add(FUnciones.generarCliente);
 		do {
 			System.out.println("1. Ver tiendas");
 			System.out.println("2. Comprar");

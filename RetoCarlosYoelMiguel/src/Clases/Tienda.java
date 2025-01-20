@@ -1,6 +1,6 @@
 package Clases;
 import java.util.List;
-import clases.Producto;
+import Clases.Producto;
 
 public class Tienda {
 
