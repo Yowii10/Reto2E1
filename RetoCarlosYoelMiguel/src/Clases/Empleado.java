@@ -38,5 +38,7 @@ public class Empleado {
 	public String toString() {
 		return "Empleado [nombre=" + nombre + ", antiguedad=" + antiguedad + ", sueldo=" + sueldo + "]";
 	}
-	
+	public double calcularSueldo() {
+		
+	}
 }
