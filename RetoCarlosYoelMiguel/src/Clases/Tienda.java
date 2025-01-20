@@ -1,5 +1,9 @@
 package Clases;
 import java.util.List;
+<<<<<<< HEAD
+=======
+import Clases.Producto;
+>>>>>>> branch 'main' of https://github.com/Yowii10/Reto2E1.git
 
 public class Tienda {
 
