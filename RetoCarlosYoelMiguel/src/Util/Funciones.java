@@ -2,7 +2,10 @@ package Util;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 import java.util.List;
+import java.util.Random;
 import java.util.Scanner;
+
+import Clases.Producto;
 
 public class Funciones {
 	//indica si el String que recibe como parametro es entero
@@ -101,6 +104,14 @@ public class Funciones {
 			System.out.print(i == 0 ? lista.get(i) : ", " + lista.get(i));
 		}
 		System.out.println();
+	}
+	public void generarProducto () {
+		Random r = new Random();
+		int id1 = r.nextInt(1,1000);
+		String nombre = "nombre"+id1;
+		double precio = r.nextDouble(1,100000);
+		
+		Producto producto1 = new Producto(id1,nombre,precio);
 	}
 	 
 }
