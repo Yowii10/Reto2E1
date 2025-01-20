@@ -18,6 +18,13 @@ public class Empleado {
 	}
 	public void setAntiguedad(String antiguedad) {
 		this.antiguedad = antiguedad;
+		if (antiguedad < 5) {
+            sueldo = 1000;
+        } else if (antiguedad <= 10) {
+            sueldo = 1200;
+        } else {
+            sueldo = 1500;
+        }
 	}
 	public double getSueldo() {
 		return sueldo;
