@@ -29,4 +29,24 @@ public Cliente() {
 public String toString() {
 	return "Cliente [nombre=" + nombre + ", compra=" + compra + "]";
 }
+	 public void comprarProducto(Tienda tienda, Producto producto) {
+	        compras.putIfAbsent(tienda, new ArrayList<>());
+	        compras.get(tienda).add(producto);
+	    }
+
+	    public double gastoTotal() {
+	    	for (List<Producto> productosComprados : compras.values()) { 
+	    		for (Producto producto : productosComprados) 
+	    		{ total += producto.getPrecio(); } 
+	    		} 
+	    	return total; }
+
+	    public void mostrarCompras() {
+	        compras.forEach((tienda, productos) -> {
+	            System.out.println("Tienda: " + tienda.getNombre() + " - Productos: " + productos.size());
+	        });
+	        System.out.println("Gasto total: " + gastoTotal() + "€");
+	    }
+	}
+
 }
