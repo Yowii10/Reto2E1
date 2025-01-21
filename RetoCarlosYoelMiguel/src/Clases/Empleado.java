@@ -18,9 +18,9 @@ public class Empleado {
 	}
 	public void setAntiguedad(int antiguedad) {
 		this.antiguedad = antiguedad;
-<<<<<<< HEAD
+
 		this.sueldo = calcularSueldo();
-=======
+
 		if (antiguedad < 5) {
             sueldo = 1000;
         } else if (antiguedad <= 10) {
@@ -28,7 +28,6 @@ public class Empleado {
         } else {
             sueldo = 1500;
         }
->>>>>>> branch 'main' of https://github.com/Yowii10/Reto2E1.git
 	}
 	public double getSueldo() {
 		return sueldo;

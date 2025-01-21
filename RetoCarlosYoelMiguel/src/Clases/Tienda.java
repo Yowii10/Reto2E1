@@ -87,7 +87,7 @@ public class Tienda {
             reponer(5);
         }
     }
-}
+
 
 	public void reponerProductos(int cantidad) {
     Random random = new Random();
@@ -109,4 +109,4 @@ public Producto venderProducto() {
     return null;
 }
 }
->>>>>>> branch 'main' of https://github.com/Yowii10/Reto2E1.git
+
