@@ -5,7 +5,7 @@ import java.time.LocalDate;
 public class Empleado {
 	
 	private String nombre;
-	private String antiguedad;
+	private int antiguedad;
 	private double sueldo;
 	public String getNombre() {
 		return nombre;
@@ -13,11 +13,12 @@ public class Empleado {
 	public void setNombre(String nombre) {
 		this.nombre = nombre;
 	}
-	public String getAntiguedad() {
+	public int getAntiguedad() {
 		return antiguedad;
 	}
-	public void setAntiguedad(String antiguedad) {
+	public void setAntiguedad(int antiguedad) {
 		this.antiguedad = antiguedad;
+		this.sueldo = calcularSueldo();
 	}
 	public double getSueldo() {
 		return sueldo;
@@ -25,11 +26,11 @@ public class Empleado {
 	public void setSueldo(double sueldo) {
 		this.sueldo = sueldo;
 	}
-	public Empleado(String nombre, String antiguedad, double sueldo) {
+	public Empleado(String nombre, int antiguedad, double sueldo) {
 		super();
 		this.nombre = nombre;
 		this.antiguedad = antiguedad;
-		this.sueldo = sueldo;
+		this.sueldo = calcularSueldo();
 	}
 	public Empleado() {
 		super();
@@ -38,7 +39,13 @@ public class Empleado {
 	public String toString() {
 		return "Empleado [nombre=" + nombre + ", antiguedad=" + antiguedad + ", sueldo=" + sueldo + "]";
 	}
-	public double calcularSueldo() {
-		
+	public int calcularSueldo() {
+        if (antiguedad < 5) {
+            return 1000;
+        } else if (antiguedad <= 10) {
+            return 1200;
+        } else {
+            return 1500;
+        }
 	}
 }

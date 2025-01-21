@@ -21,7 +21,7 @@ public class reto {
 			tiendas.add(Funciones.generarTienda());
 			
 		}
-		clientes.add(FUnciones.generarCliente);
+		clientes.add(Funciones.generarCliente);
 		do {
 			System.out.println("1. Ver tiendas");
 			System.out.println("2. Comprar");
