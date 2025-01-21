@@ -108,5 +108,12 @@ public Producto venderProducto() {
     }
     return null;
 }
+
+
+
+public void setProductos(List<Producto> lista) {
+	// TODO Auto-generated method stub
+	
+}
 }
 

@@ -13,7 +13,7 @@ public class reto {
 		int numero = 0;
 		List<Empleado> empleados = new ArrayList();
 		List<Tienda> tiendas = new ArrayList();
-		List<Cliente> clientes = new ArrayList();
+		Cliente clientes = new Cliente("nombre");
 		for (int i = 0; i < 20; i++) {
 			Empleado empleado= new Empleado("nombre" + i, r.nextInt(2,21));
 
@@ -22,10 +22,10 @@ public class reto {
 		
 		for (int i = 0; i < 5; i++) {
 			
-			Tienda tienda= new Tienda(numero,"nombre", );
+			Tienda tienda= new Tienda(numero,"tienda"+i, empleados.get(r.nextInt(0, empleados.size())));
+			tiendas.add(tienda);
 			
 		}
-		clientes.add(generarCliente);
 		do {
 			System.out.println("1. Ver tiendas");
 			System.out.println("2. Comprar");
@@ -35,7 +35,7 @@ public class reto {
 			numero = Funciones.dimeEntero("Introduce una opcion", sc);
 			switch (numero) {
 			case 1:
-				
+				mostrarTiendas(tiendas);
 				break;
 			case 2:
 				
@@ -44,17 +44,61 @@ public class reto {
 				
 				break;
 			case 4: 
+				realizarQueja();
+				break;
+			case 5: 
+				
 				break;
 			}
 		} while (numero != 5);	
 	}
 
-	public void generarEmpleado(Tienda tienda) {
-				empleado.get(new Random().nextInt(empleado.size()));
+	public static void reponerTienda(Tienda tienda, Random r) {
 
-        tienda.setGerente(nuevoGerente);
+		int nRandom = r.nextInt(5, 11);
 
-        System.out.println("Nuevo gerente asignado: " + nuevoGerente.getNombre());
+		int id;
+
+		double precio;
+
+		List<Producto> lista = new ArrayList<Producto>();
+
+		
+
+		for (int i = 0; i < nRandom; i++) {
+
+			id = r.nextInt(1,100);
+
+			precio = Math.round(r.nextDouble(10,101)*100)/100.0;
+
+			Producto producto = new Producto(id, "Producto" + id, precio);
+
+			
+
+			//si no había lista, usa la nueva y la mete
+
+			if (tienda.getProductos() == null) {
+
+				lista.add(producto);
+
+				tienda.setProductos(lista);
+
+				
+
+			//si había lista, la coge, añade el producto y la vuelve a meter
+
+			} else {
+
+				lista = tienda.getProductos();
+
+				lista.add(producto);
+
+				tienda.setProductos(lista);
+
+			}
+
+		}
+
 	}
 	public void generarProducto () {
 		Random r = new Random();
@@ -65,53 +109,50 @@ public class reto {
 		Producto producto1 = new Producto(id1,nombre,precio);
 	}
 
-	  private static void verTiendas() {
-        tiendas.forEach(System.out::println);
-    }
+	public static void mostrarTiendas( List<Tienda> tienda) {
+		for (Tienda tienda2 : tienda) {
+			System.out.println(tienda2);
+		}
+	}
+		
+	
+	
 
-    private static void comprar() {
-        Scanner scanner = new Scanner(System.in);
-        Tienda tienda;
 
-        do {
-            System.out.println("Seleccione una tienda por ID:");
-            verTiendas();
-            int idTienda = scanner.nextInt();
-            tienda = tiendas.stream().filter(t -> t.getId() == idTienda).findFirst().orElse(null);
+    public static void realizarQueja() {
 
-            if (tienda == null) {
-                System.out.println("ID de tienda no válido. Intente nuevamente.");
-            }
-        } while (tienda == null);
+		Scanner sc = new Scanner(System.in);
 
-        Producto producto = tienda.venderProducto();
-        if (producto != null) {
-            cliente.comprarProducto(tienda, producto);
-            System.out.println("Producto comprado: " + producto);
-        } else {
-            System.out.println("No hay productos disponibles en esta tienda.");
-        }
-    }
+		Random r = new Random();
 
-    private static void realizarQueja() {
-        Scanner scanner = new Scanner(System.in);
-        Tienda tienda;
+		
 
-        do {
-            System.out.println("Seleccione una tienda por ID:");
-            verTiendas();
-            int idTienda = scanner.nextInt();
-            tienda = tienda.stream().filter(t -> t.getId() == idTienda).findFirst().orElse(null);
+		Tienda t1 = tienda.get(0);
+		t1.setGerente(empleado.get(r.nextInt(0, empleado.size())));
 
-            if (tienda == null) {
-                System.out.println("ID de tienda no válido. Intente nuevamente.");
-            }
-        } while (tienda == null);
+		int id_gerente = 0;
 
-        Empleado nuevoGerente = Empleado.get(new Random().nextInt(Empleado.size()));
-        tienda.setGerente(nuevoGerente);
-        System.out.println("Nuevo gerente asignado: " + nuevoGerente.getNombre());
-    }
+		Empleado nuevo = null;
+
+		id_gerente = r.nextInt(1,21);
+
+		for (Empleado empleado : empleado) {
+
+			if (tienda.getId() == id_gerente) {
+
+				nuevo = empleado;
+
+				empleado.setAntiguedad(id_gerente);
+
+			}
+
+		}
+
+		
+
+		tienda.setGerente(nuevo);
+
+	}
 
 
 	}
