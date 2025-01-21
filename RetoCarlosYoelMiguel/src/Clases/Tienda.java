@@ -21,23 +21,41 @@ public class Tienda {
         this.productos = new ArrayList<>();
     }
 
+
+
     public int getId() {
-        return id;
-    }
+		return id;
+	}
 
-    public String getNombre() {
-        return nombre;
-    }
+	public void setId(int id) {
+		this.id = id;
+	}
 
-    public Empleado getGerente() {
-        return gerente;
-    }
+	public String getNombre() {
+		return nombre;
+	}
 
-    public ArrayList<Producto> getProductos() {
-        return productos;
-    }
+	public void setNombre(String nombre) {
+		this.nombre = nombre;
+	}
 
-    public void reponer(int cantidad) {
+	public Empleado getGerente() {
+		return gerente;
+	}
+
+	public void setGerente(Empleado gerente) {
+		this.gerente = gerente;
+	}
+
+	public ArrayList<Producto> getProductos() {
+		return productos;
+	}
+
+	public void setProductos(ArrayList<Producto> productos) {
+		this.productos = productos;
+	}
+
+	public void reponer(int cantidad) {
         Random r = new Random();
         int productosAgregados = 0;
 

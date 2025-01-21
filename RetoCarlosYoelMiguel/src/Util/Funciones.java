@@ -5,6 +5,7 @@ import java.util.List;
 import java.util.Random;
 import java.util.Scanner;
 
+import Clases.Empleado;
 import Clases.Producto;
 
 public class Funciones {
@@ -114,6 +115,12 @@ public class Funciones {
 		Producto producto1 = new Producto(id1,nombre,precio);
 	}
 
-	
+	public void generarEmpleado() {
+		Empleado nuevoGerente = empleados.get(new Random().nextInt(empleados.size()));
+
+        tienda.setGerente(nuevoGerente);
+
+        System.out.println("Nuevo gerente asignado: " + nuevoGerente.getNombre());
+	}
 	 
 }

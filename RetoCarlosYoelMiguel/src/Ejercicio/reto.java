@@ -14,14 +14,14 @@ public class reto {
 		List<Tienda> tiendas = new ArrayList();
 		List<Cliente> clientes = new ArrayList();
 		for (int i = 0; i < 20; i++) {
-			empleados.add(Funciones.generarEmpleado());
+			empleados.add(generarEmpleado());
 		}
 		
 		for (int i = 0; i < 5; i++) {
-			tiendas.add(Funciones.generarTienda());
+			tiendas.add(generarTienda());
 			
 		}
-		clientes.add(Funciones.generarCliente);
+		clientes.add(generarCliente);
 		do {
 			System.out.println("1. Ver tiendas");
 			System.out.println("2. Comprar");
@@ -43,6 +43,13 @@ public class reto {
 				break;
 			}
 		} while (numero != 5);	
+	}
+	public void generarEmpleado(Tienda tienda) {
+		Empleado nuevoGerente = Empleado.get(new Random().nextInt(Empleado.size()));
+
+        tienda.setGerente(nuevoGerente);
+
+        System.out.println("Nuevo gerente asignado: " + nuevoGerente.getNombre());
 	}
 	}
 
