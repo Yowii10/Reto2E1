@@ -9,16 +9,20 @@ public class reto {
 
 	public static void main(String[] args) {
 		Scanner sc = new Scanner(System.in);
+		Random r = new Random();
 		int numero = 0;
 		List<Empleado> empleados = new ArrayList();
 		List<Tienda> tiendas = new ArrayList();
 		List<Cliente> clientes = new ArrayList();
 		for (int i = 0; i < 20; i++) {
-			empleados.add(generarEmpleado());
+			Empleado empleado= new Empleado("nombre" + i, r.nextInt(2,21));
+
+			empleados.add(empleado);
 		}
 		
 		for (int i = 0; i < 5; i++) {
-			tiendas.add(generarTienda());
+			
+			Tienda tienda= new Tienda(numero,"nombre", );
 			
 		}
 		clientes.add(generarCliente);
@@ -45,11 +49,19 @@ public class reto {
 		} while (numero != 5);	
 	}
 	public void generarEmpleado(Tienda tienda) {
-		Empleado nuevoGerente = Empleado.get(new Random().nextInt(Empleado.size()));
+				empleado.get(new Random().nextInt(empleado.size()));
 
         tienda.setGerente(nuevoGerente);
 
         System.out.println("Nuevo gerente asignado: " + nuevoGerente.getNombre());
+	}
+	public void generarProducto () {
+		Random r = new Random();
+		int id1 = r.nextInt(1,1000);
+		String nombre = "nombre"+id1;
+		double precio = r.nextDouble(1,100000);
+		
+		Producto producto1 = new Producto(id1,nombre,precio);
 	}
 	}
 

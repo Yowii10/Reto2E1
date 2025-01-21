@@ -106,21 +106,8 @@ public class Funciones {
 		}
 		System.out.println();
 	}
-	public void generarProducto () {
-		Random r = new Random();
-		int id1 = r.nextInt(1,1000);
-		String nombre = "nombre"+id1;
-		double precio = r.nextDouble(1,100000);
-		
-		Producto producto1 = new Producto(id1,nombre,precio);
-	}
 
-	public void generarEmpleado() {
-		Empleado nuevoGerente = empleados.get(new Random().nextInt(empleados.size()));
 
-        tienda.setGerente(nuevoGerente);
 
-        System.out.println("Nuevo gerente asignado: " + nuevoGerente.getNombre());
-	}
 	 
 }

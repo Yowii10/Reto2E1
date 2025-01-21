@@ -26,7 +26,7 @@ public class Empleado {
 	public void setSueldo(double sueldo) {
 		this.sueldo = sueldo;
 	}
-	public Empleado(String nombre, int antiguedad, double sueldo) {
+	public Empleado(String nombre, int antiguedad) {
 		super();
 		this.nombre = nombre;
 		this.antiguedad = antiguedad;
@@ -48,4 +48,5 @@ public class Empleado {
             return 1500;
         }
 	}
+
 }
